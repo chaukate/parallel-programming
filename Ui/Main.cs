@@ -57,7 +57,7 @@ namespace Ui
         {
             pnlBody.Controls.Clear();
             var usrCtrl = new UsrCtrlParallelOperation();
-            usrCtrl.numericValue.Minimum = 100;
+            usrCtrl.numericValue.Minimum = 0;
             usrCtrl.numericValue.Maximum = totalInserted;
             usrCtrl.Dock = DockStyle.Fill;
             pnlBody.Controls.Add(usrCtrl);

@@ -26,9 +26,9 @@ namespace Ui
             pnlBody.Controls.Add(usrCtrl);
         }
 
+        int totalInserted = 0;
         private void Main_Load(object sender, EventArgs e)
         {
-            var totalInserted = 0;
             Task.Run(async () =>
             {
                 var records = await FileHelper.ReadRecordsAsync();
@@ -57,6 +57,8 @@ namespace Ui
         {
             pnlBody.Controls.Clear();
             var usrCtrl = new UsrCtrlParallelOperation();
+            usrCtrl.numericValue.Minimum = 100;
+            usrCtrl.numericValue.Maximum = totalInserted;
             usrCtrl.Dock = DockStyle.Fill;
             pnlBody.Controls.Add(usrCtrl);
         }
